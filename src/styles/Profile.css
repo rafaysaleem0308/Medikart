@@ -1,0 +1,403 @@
+/* Main container styles */
+.profile-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Loading state */
+.profile-loading {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666;
+  margin-top: 2rem;
+}
+
+/* Header styles */
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 1rem;
+}
+
+.profile-title {
+  font-size: 1.8rem;
+  color: #333;
+  margin: 0;
+}
+
+.profile-edit-btn {
+  background-color: #4a6fa5;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s;
+}
+
+.profile-edit-btn:hover {
+  background-color: #3a5a80;
+}
+
+/* Messages */
+.profile-success-message {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 0.75rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.profile-error-message {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 0.75rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Profile content layout */
+.profile-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Form styles */
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.profile-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.profile-form-label {
+  font-weight: 600;
+  color: #444;
+}
+
+.profile-form-input {
+  padding: 0.6rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.profile-form-input:focus {
+  border-color: #4a6fa5;
+  outline: none;
+}
+
+.profile-form-error {
+  color: #dc3545;
+  font-size: 0.85rem;
+}
+
+.profile-email-display,
+.profile-role-display,
+.profile-specialization-display {
+  padding: 0.6rem;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  color: #555;
+}
+
+.profile-password-title {
+  margin-top: 1.5rem;
+  color: #333;
+  font-size: 1.2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+/* Form buttons */
+.profile-form-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.profile-save-btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.profile-save-btn:hover {
+  background-color: #218838;
+}
+
+.profile-cancel-btn {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.profile-cancel-btn:hover {
+  background-color: #5a6268;
+}
+
+/* Profile info display */
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.profile-info-group {
+  display: flex;
+  gap: 1rem;
+}
+
+.profile-info-label {
+  font-weight: 600;
+  color: #444;
+  min-width: 120px;
+}
+
+.profile-info-value {
+  color: #555;
+}
+
+/* Vouchers section */
+.profile-vouchers-section {
+  margin-top: 2rem;
+}
+
+.profile-vouchers-title {
+  font-size: 1.4rem;
+  color: #333;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.profile-no-vouchers {
+  color: #666;
+  text-align: center;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+}
+
+.profile-vouchers-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.2rem;
+}
+
+.profile-voucher-card {
+  padding: 1.2rem;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.profile-voucher-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-voucher-card.used {
+  opacity: 0.7;
+  background-color: #e9ecef;
+}
+
+.profile-voucher-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.profile-voucher-name {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #2c3e50;
+}
+
+.profile-voucher-status {
+  font-size: 0.8rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 12px;
+  background-color: #4a6fa5;
+  color: white;
+}
+
+.profile-voucher-card.used .profile-voucher-status {
+  background-color: #6c757d;
+}
+
+.profile-voucher-description {
+  margin: 0.5rem 0;
+  color: #495057;
+  font-size: 0.9rem;
+}
+
+.profile-voucher-assigned,
+.profile-voucher-used {
+  margin: 0.3rem 0;
+  font-size: 0.8rem;
+  color: #6c757d;
+}
+
+.profile-voucher-use-btn {
+  margin-top: 0.8rem;
+  background-color: #4a6fa5;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s;
+}
+
+.profile-voucher-use-btn:hover {
+  background-color: #3a5a80;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .profile-container {
+    padding: 1rem;
+    margin: 1rem;
+  }
+
+  .profile-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .profile-info-group {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .profile-form-buttons {
+    flex-direction: column;
+  }
+}
+/* Voucher Styles */
+.voucherContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.voucherBadge {
+  display: flex;
+  align-items: center;
+  padding: 6px 10px;
+  background: #f8f9fa;
+  border-radius: 4px;
+  border-left: 3px solid #28a745;
+}
+
+.voucherBadge .used {
+  border-left-color: #6c757d;
+}
+
+.voucherIcon {
+  margin-right: 8px;
+  font-size: 1.2rem;
+  color: #28a745;
+}
+
+.voucherIcon.used {
+  color: #6c757d;
+}
+
+.voucherDetails {
+  flex: 1;
+}
+
+.voucherName {
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+
+.voucherDates {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 0.75rem;
+  color: #6c757d;
+}
+
+.voucherDates div {
+  display: flex;
+  align-items: center;
+}
+
+.noVouchers {
+  color: #6c757d;
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+/* Badge Styles */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.badgeDoctor {
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+.badgeAdmin {
+  background-color: #fff8e1;
+  color: #ff8f00;
+}
+
+.badgeCustomer {
+  background-color: #e8f5e9;
+  color: #388e3c;
+}
+
+.roleIcon {
+  margin-right: 4px;
+  font-size: 0.9rem;
+}
+.roleIcon.doctor {
+  color: #1976d2;
+}
+.roleIcon.admin {
+  color: #ff8f00;
+}
+.roleIcon.customer {
+  color: #388e3c;
+}

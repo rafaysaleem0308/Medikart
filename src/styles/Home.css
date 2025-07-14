@@ -1,0 +1,901 @@
+/* Enhanced Home Page Styles for MediKart Pharmacy */
+
+/* Base Styles */
+.medikart-home-container * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.medikart-home-container {
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto",
+    "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+  color: #164472;
+  min-height: 100vh;
+}
+
+/* Hero Carousel Section */
+.medikart-hero-carousel {
+  position: relative;
+  height: 80vh;
+  z-index: 1;
+  min-height: 600px;
+  background: #1066a0b4;
+  overflow: hidden;
+  border-radius: 20px 200px;
+}
+
+.medikart-carousel-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.medikart-carousel-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.medikart-carousel-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 3;
+}
+
+.medikart-carousel-slide.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0) !important;
+}
+
+.medikart-slide-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  transform: translateY(30px);
+  transition: transform 0.6s ease 0.2s;
+  margin: 0 auto;
+  padding: 0 80px;
+  position: relative;
+  z-index: 4;
+}
+
+.medikart-carousel-slide.active .medikart-slide-content {
+  transform: translateY(0);
+}
+
+.medikart-slide-text {
+  color: #ffffff;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.medikart-slide-title {
+  font-size: 4.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  transform: translateX(-30px);
+  opacity: 0;
+  transition: all 0.6s ease 0.3s;
+}
+
+.medikart-carousel-slide.active .medikart-slide-title {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.medikart-slide-subtitle {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  transform: translateX(-30px);
+  opacity: 0;
+  transition: all 0.6s ease 0.4s;
+}
+
+.medikart-carousel-slide.active .medikart-slide-subtitle {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.medikart-slide-description {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  color: rgba(255, 255, 255, 0.8);
+  transform: translateX(-30px);
+  opacity: 0;
+  transition: all 0.6s ease 0.5s;
+}
+
+.medikart-carousel-slide.active .medikart-slide-description {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.medikart-slide-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: rgb(17, 79, 160);
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+  transform: translateY(20px);
+  opacity: 0;
+}
+
+.medikart-carousel-slide.active .medikart-slide-button {
+  transform: translateY(0);
+  opacity: 1;
+  transition: all 0.6s ease 0.6s, background-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.medikart-slide-button:hover {
+  background: #1e416e;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.medikart-button-arrow {
+  transition: transform 0.2s ease;
+}
+
+.medikart-slide-button:hover .medikart-button-arrow {
+  transform: translateX(3px);
+}
+
+.medikart-slide-image {
+  transform: translateX(30px);
+  opacity: 0;
+  transition: all 0.6s ease 0.4s;
+}
+
+.medikart-carousel-slide.active .medikart-slide-image {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.medikart-slide-image img {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Carousel Controls */
+.medikart-carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px !important;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.medikart-carousel-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.medikart-prev-btn {
+  left: 2rem;
+}
+
+.medikart-next-btn {
+  right: 2rem;
+}
+
+.medikart-carousel-indicators {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  z-index: 10;
+}
+
+.medikart-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.medikart-indicator.active {
+  background: #ffffff;
+  border-color: #ffffff;
+  transform: scale(1.2);
+}
+
+.medikart-indicator:hover {
+  border-color: #ffffff;
+}
+
+/* About Section */
+.medikart-about-section {
+  padding: 6rem 0;
+  background: rgba(245, 245, 245, 0.664);
+  border-radius: 10px;
+}
+
+.medikart-about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.medikart-about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.medikart-about-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.medikart-about-text h2 {
+  color: #2a7fba;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.medikart-about-text h3 {
+  color: #050c13;
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.medikart-about-text p {
+  color: #7a8a99;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.medikart-about-features {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.medikart-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #050c13;
+  font-weight: 500;
+}
+
+.medikart-feature-icon {
+  font-size: 1.2rem;
+  width: 24px;
+  text-align: center;
+}
+
+.medikart-learn-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: #2a7fba;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.medikart-learn-more-btn:hover {
+  background: #1e6ca3;
+  transform: translateY(-2px);
+}
+
+.medikart-about-image {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.medikart-about-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.medikart-image-overlay {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  background: rgba(42, 127, 186, 0.9);
+  color: #ffffff;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+}
+
+.medikart-overlay-content {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+}
+
+.medikart-overlay-icon {
+  font-size: 1.2rem;
+}
+
+/* Services Section */
+.medikart-services-section {
+  padding: 6rem 0;
+  background: rgba(245, 245, 245, 0.733);
+  border-radius: 10px;
+}
+
+.medikart-services-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.medikart-section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.medikart-section-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2a7fba;
+  margin-bottom: 1rem;
+}
+
+.medikart-section-header p {
+  font-size: 1.2rem;
+  color: #7a8a99;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.medikart-services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.medikart-service-card {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: all 0.3s ease;
+  border-top: 4px solid #2a7fba;
+}
+
+.medikart-service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.medikart-service-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.medikart-service-card h3 {
+  color: #050c13;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.medikart-service-card p {
+  color: #7a8a99;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.medikart-service-btn {
+  padding: 0.75rem 1.5rem;
+  background: transparent;
+  color: #2a7fba;
+  border: 2px solid #2a7fba;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.medikart-service-btn:hover {
+  background: #2a7fba;
+  color: #ffffff;
+}
+
+/* Statistics Section */
+.medikart-stats-section {
+  background: #1066a0b4;
+  padding: 4rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.medikart-stats-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  animation: medikart-float 20s ease-in-out infinite;
+}
+
+.medikart-stats-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.medikart-stats-container h2 {
+  color: #ffffff;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  font-weight: 700;
+}
+
+.medikart-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.medikart-stat-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.medikart-stat-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.medikart-stat-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.medikart-stat-number {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.medikart-stat-label {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* Categories Section */
+.medikart-categories-section {
+  padding: 6rem 0;
+  background: #ffffff;
+}
+
+.medikart-categories-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.medikart-categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.medikart-category-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  height: 300px;
+}
+
+.medikart-category-card:hover {
+  transform: translateY(-5px);
+}
+
+.medikart-category-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.medikart-category-card:hover img {
+  transform: scale(1.1);
+}
+
+.medikart-category-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.medikart-category-card:hover .medikart-category-overlay {
+  opacity: 1;
+}
+
+.medikart-category-overlay h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.medikart-category-overlay p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+
+.medikart-category-btn {
+  padding: 0.75rem 1.5rem;
+  background: #2d389c;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.medikart-category-btn:hover {
+  background: #1e416e;
+  transform: translateY(-2px);
+}
+
+/* CTA Section */
+.medikart-cta-section {
+  background: #1066a0b4;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.medikart-cta-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.medikart-cta-content h2 {
+  color: #ffffff;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.medikart-cta-content p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.medikart-cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.medikart-cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 160px;
+  justify-content: center;
+}
+
+.medikart-cta-button.primary {
+  background: #0f1788;
+  color: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+.medikart-cta-button.primary:hover {
+  background: #1e416e;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.medikart-cta-button.secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.medikart-cta-button.secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Testimonials Section */
+.medikart-testimonials-section {
+  padding: 6rem 0;
+  background: rgba(245, 245, 245, 0.733);
+  border-radius: 10px;
+}
+
+.medikart-testimonials-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.medikart-testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.medikart-testimonial-card {
+  background: #ffffff;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border-top: 4px solid #2a7fba;
+  position: relative;
+}
+
+.medikart-testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.medikart-testimonial-card p {
+  color: #7a8a99;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.medikart-testimonial-card p::before {
+  content: '"';
+  position: absolute;
+  left: 0;
+  top: -0.5rem;
+  font-size: 3rem;
+  color: #e3f2fd;
+  opacity: 0.5;
+}
+
+.medikart-customer-name {
+  display: block;
+  font-weight: 600;
+  color: #050c13;
+  text-align: right;
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+}
+
+/* Animations */
+@keyframes medikart-float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(180deg);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .medikart-slide-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .medikart-about-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .medikart-about-image {
+    order: -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .medikart-hero-carousel {
+    height: 70vh;
+    min-height: 500px;
+  }
+
+  .medikart-slide-title {
+    font-size: 2.5rem;
+  }
+
+  .medikart-slide-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .medikart-slide-description {
+    font-size: 1rem;
+  }
+
+  .medikart-carousel-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+
+  .medikart-prev-btn {
+    left: 1rem;
+  }
+
+  .medikart-next-btn {
+    right: 1rem;
+  }
+
+  .medikart-section-header h2 {
+    font-size: 2rem;
+  }
+
+  .medikart-services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .medikart-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .medikart-categories-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .medikart-cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .medikart-carousel-slide {
+    padding: 1rem;
+  }
+
+  .medikart-slide-title {
+    font-size: 2rem;
+  }
+
+  .medikart-about-container,
+  .medikart-services-container,
+  .medikart-categories-container {
+    padding: 0 1rem;
+  }
+
+  .medikart-service-card {
+    padding: 2rem;
+  }
+
+  .medikart-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .medikart-stat-card {
+    padding: 2rem 1rem;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.medikart-carousel-btn:focus,
+.medikart-indicator:focus,
+.medikart-slide-button:focus {
+  outline: 2px solid #0f1788;
+  outline-offset: 2px;
+}
+
+/* Spacing utility */
+.medikart-spacing {
+  margin-bottom: 1rem;
+}

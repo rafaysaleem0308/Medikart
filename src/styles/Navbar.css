@@ -1,0 +1,254 @@
+/* Navbar container */
+.navbar {
+  background-color: #1066a0a4 !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 0.8rem 1rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: sticky;
+}
+
+/* Brand/logo styling */
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #ffffff !important;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand:hover {
+  color: #ffffff !important;
+  transform: scale(1.03);
+}
+
+.brand-text {
+  margin-left: 0.5rem;
+}
+
+.bi-capsule-pill {
+  font-size: 1.8rem;
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+/* Nav items */
+.nav-item {
+  margin: 0 0.3rem;
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.85) !important;
+  padding: 0.5rem 0.8rem !important;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.nav-link.active {
+  color: #ffffff !important;
+  font-weight: 600;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+  border: none;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 0.5rem 0;
+}
+
+.dropdown-item {
+  padding: 0.5rem 1.5rem;
+  color: #333;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-item:hover {
+  background-color: #e9f5ff;
+  color: #2a7fba;
+}
+
+/* Search form */
+.form-control {
+  border-radius: 20px 0 0 20px;
+  border: 1px solid #ddd;
+  padding: 0.5rem 1rem;
+  min-width: 250px;
+}
+
+.btn-primary {
+  border-radius: 0 20px 20px 0;
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+/* Cart icon */
+.navbar-nav .nav-link.position-relative {
+  padding: 0.5rem 1rem !important;
+}
+
+.badge {
+  font-size: 0.6rem;
+  padding: 0.25em 0.4em;
+}
+
+/* Profile dropdown */
+.navbar-nav .dropdown-toggle::after {
+  display: none;
+}
+
+/* Footer styles */
+/* Footer specific styles */
+.footer-container {
+  position: relative;
+  z-index: 10; /* Ensure it stays above background elements */
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  color: #ffffff; /* Light text for dark backgrounds */
+}
+
+.footer-container a {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.footer-container a:hover {
+  color: #ffffff !important;
+  text-decoration: underline;
+}
+
+.footer-container h5 {
+  color: #ffffff;
+  margin-bottom: 1.2rem;
+  font-weight: 600;
+}
+
+.footer-container .social-icons a {
+  color: #ffffff !important;
+  margin-right: 1rem;
+  font-size: 1.2rem;
+}
+
+.footer-container .list-unstyled li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-container hr {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Semi-transparent overlay for better readability */
+.footer-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  z-index: -1;
+}
+footer {
+  background-color: #1066a0c2;
+  border-top: 1px solid #e9ecef;
+}
+
+footer h5 {
+  color: #145c8d;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+footer a {
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #1066a0 !important;
+}
+
+footer .social-icons a {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+footer .social-icons a:hover {
+  transform: translateY(-3px);
+  color: #000000 !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .navbar-collapse {
+    padding-top: 1rem;
+  }
+
+  .form-control {
+    min-width: 0;
+  }
+
+  footer .col-md-4 {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-brand {
+    font-size: 1.3rem;
+  }
+
+  .bi-capsule-pill {
+    font-size: 1.5rem;
+  }
+
+  footer .row > div {
+    margin-bottom: 1.5rem;
+  }
+}
+/* User initial circle */
+.user-initial-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #0d6efd;
+  color: white;
+  font-weight: bold;
+}
+
+/* Spinning icon for loading */
+.spinning {
+  animation: spin 1s linear infinite;
+  margin-right: 8px;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .navbar-nav .dropdown-menu {
+    position: static !important;
+  }
+}
