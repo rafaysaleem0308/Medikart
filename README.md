@@ -1,83 +1,78 @@
 # MediKart
 
-MediKart is a full-stack pharmacy and healthcare e-commerce platform built with React, Node.js, Express, MongoDB, and Socket.IO. It provides product browsing, cart and checkout flows, authentication, reviews, voucher support, and real-time user chat, along with an admin panel for operational management.
+MediKart is a full-stack pharmacy and healthcare e-commerce platform. It combines a React frontend with an Express + MongoDB backend and includes real-time chat using Socket.IO.
 
 ## Table of Contents
 - [Features](#features)
 - [Tech Stack](#tech-stack)
 - [Project Structure](#project-structure)
-- [Getting Started](#getting-started)
-- [Environment Variables](#environment-variables)
+- [Setup Guide](#setup-guide)
 - [Available Scripts](#available-scripts)
 - [API Overview](#api-overview)
 - [Contributing](#contributing)
 
 ## Features
 
-### User Features
-- User authentication and profile management
-- Browse and filter products by category
-- Add to cart and complete checkout flow
-- Submit and view product/service reviews
-- Contact form and informational pages
-- Real-time private chat with Socket.IO
-- Voucher support during purchase flow
+### Customer Features
+- User signup, login, and profile management
+- Browse products and filter by categories
+- Shopping cart and checkout flow
+- Order placement and tracking support
+- Product and service review submission
+- Voucher support for discounted purchases
+- Contact and informational pages
+- Real-time private chat with online status and message history
 
 ### Admin Features
-- Admin dashboard and analytics page
-- Product management tools
-- User management tools
-- Voucher management interface
+- Admin dashboard and analytics view
+- Product management
+- User management
+- Voucher management
+- Admin-side chat visibility and communication tools
+
+### Platform Capabilities
+- JWT-based authentication and protected routes
+- REST API for auth, products, orders, reviews, vouchers, contact, chat, and content data
+- MongoDB-backed persistence using Mongoose models
 
 ## Tech Stack
 - **Frontend:** React, React Router, Bootstrap, React Toastify
 - **Backend:** Node.js, Express
-- **Database:** MongoDB (Mongoose)
-- **Real-time Communication:** Socket.IO
+- **Database:** MongoDB with Mongoose
+- **Realtime:** Socket.IO
 - **Authentication:** JWT
 
 ## Project Structure
 
 ```text
 Medikart/
-├── BackEnd/            # Express API, routes, models, socket server
-├── public/             # Static React assets
+├── BackEnd/            # API routes, models, socket logic, server entry
+├── public/             # Static frontend assets
 ├── src/                # React application source code
-├── package.json        # Frontend + backend dependency and script config
+├── package.json        # Project dependencies and frontend scripts
 └── README.md
 ```
 
-## Getting Started
+## Setup Guide
 
-### Prerequisites
-- Node.js (v18 or newer recommended)
+### 1) Prerequisites
+- Node.js (v18+ recommended)
 - npm
-- MongoDB (local or cloud URI)
+- MongoDB instance (local or cloud)
 
-### Installation
-1. Clone the repository.
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
+### 2) Clone and install
+```bash
+git clone <repository-url>
+cd Medikart
+npm install
+```
 
-### Run the Application
-Open two terminals from the project root:
+### 3) Configure environment variables
+Create this file:
 
-1. **Start frontend (React):**
-   ```bash
-   npm start
-   ```
-   Runs on `http://localhost:3000`.
+`BackEnd/.env`
 
-2. **Start backend (Express + Socket.IO):**
-   ```bash
-   node BackEnd/server.js
-   ```
-   Runs on `http://localhost:5000` by default.
-
-## Environment Variables
-Create a `.env` file inside the `BackEnd` directory with:
+Add:
 
 ```env
 MONGODB_URI=mongodb://127.0.0.1:27017/pharmacy
@@ -85,12 +80,27 @@ JWT_SECRET=your_strong_jwt_secret
 PORT=5000
 ```
 
-## Available Scripts
-From the project root:
+### 4) Run the app
+Run both processes from the project root in separate terminals:
 
-- `npm start` - Runs the React development server
-- `npm test` - Runs tests in interactive watch mode
-- `npm run build` - Builds the app for production
+1. **Frontend**
+   ```bash
+   npm start
+   ```
+   Frontend URL: `http://localhost:3000`
+
+2. **Backend**
+   ```bash
+   node BackEnd/server.js
+   ```
+   Backend URL: `http://localhost:5000`
+
+## Available Scripts
+Run from the project root:
+
+- `npm start` - Starts React development server
+- `npm test` - Runs tests in watch mode
+- `npm run build` - Builds production frontend bundle
 
 ## API Overview
 Base backend URL: `http://localhost:5000`
@@ -102,9 +112,9 @@ Main route groups:
 - `/api/reviews` - Review operations
 - `/api/contact` - Contact form operations
 - `/api/about` - About page content operations
-- `/api/chat` - Chat-related endpoints
+- `/api/chat` - Chat operations
 - `/api/vouchers` - Voucher operations
-- `/api` - User management endpoints
+- `/api` - User management operations
 
 ## Contributing
-Contributions are welcome. Please open an issue to discuss major changes before submitting a pull request.
+Contributions are welcome. Open an issue first for major changes before submitting a pull request.
