@@ -9,7 +9,6 @@ MediKart is a full-stack pharmacy and healthcare e-commerce platform. It combine
 - [Setup Guide](#setup-guide)
 - [Available Scripts](#available-scripts)
 - [API Overview](#api-overview)
-- [Contributing](#contributing)
 
 ## Features
 
@@ -115,6 +114,3 @@ Main route groups:
 - `/api/chat` - Chat operations
 - `/api/vouchers` - Voucher operations
 - `/api` - User management operations
-
-## Contributing
-Contributions are welcome. Open an issue first for major changes before submitting a pull request.
